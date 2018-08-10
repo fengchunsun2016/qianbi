@@ -1,10 +1,12 @@
 import { isUrl } from '../utils/utils';
 
+
+
 const menuData = [
   {
     name: '主页',
-    icon: 'https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg',
-    selectIcon: 'https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg',
+    icon: require('../assets/icon-home.png'),
+    selectIcon: require('../assets/icon-home-selected.png'),
     path: 'home',
     children: [
       {
@@ -25,13 +27,13 @@ const menuData = [
   },
   {
     name: '专场',
-    icon: 'https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg',
-    selectIcon: 'https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg',
+    icon: require('../assets/icon-live.png'),
+    selectIcon: require('../assets/icon-live-selected.png'),
     path: 'live',
     children: [
       {
-        name: '基础表单',
-        path: 'base',
+        name: '专场首页',
+        path: 'main',
       },
       {
         name: '分步表单',
@@ -46,13 +48,13 @@ const menuData = [
   },
   {
     name: '限时',
-    icon: 'https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg',
-    selectIcon: 'https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg',
+    icon: require('../assets/icon-time.png'),
+    selectIcon: require('../assets/icon-time-selected.png'),
     path: 'time',
     children: [
       {
-        name: '查询表格',
-        path: 'list',
+        name: '限时热拍',
+        path: 'main',
       },
       {
         name: '标准列表',
@@ -66,8 +68,8 @@ const menuData = [
   },
   {
     name: '我的',
-    icon: 'https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg',
-    selectIcon: 'https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg',
+    icon: require('../assets/icon-my.png'),
+    selectIcon: require('../assets/icon-my-selected.png'),
     path: 'my',
     children: [
       {

@@ -23,6 +23,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': [0],
     'react/jsx-wrap-multilines': [
       'error',
+
       {
         declaration: 'parens-new-line',
         assignment: 'parens-new-line',
@@ -31,6 +32,7 @@ module.exports = {
         condition: 'parens-new-line',
         logical: 'parens-new-line',
         prop: 'ignore',
+
       },
     ],
     'no-else-return': [0],

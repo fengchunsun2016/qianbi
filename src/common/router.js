@@ -78,17 +78,26 @@ export const getRouterData = app => {
       name: '首页',
       component: dynamicWrapper(app, ['home'], () => import('../routes/Home/Home')),
     },
-    '/live/base': {
+
+    '/live/main': {
       name: '专场',
-      component: dynamicWrapper(app, [], () => import('../routes/Live/Base')),
+      component: dynamicWrapper(app, ['live','focus'], () => import('../routes/Live/Live')),
     },
-    '/live/one': {
+    '/live/liveAuctionDetail': {
       name: '专场详情',
-      component: dynamicWrapper(app, [], () => import('../routes/Live/One')),
+      component: dynamicWrapper(app, ['liveAuctionDetail','focus'], () => import('../routes/Live/LiveAuctionDetail/LiveAuctionDetail')),
     },
-    '/time/list': {
+    '/live/live-auction-hall': {
+      name: '专场拍卖大厅',
+      component: dynamicWrapper(app, [], () => import('../routes/Live/LiveAuctionHall/LiveAuctionHall')),
+    },
+    '/time/main': {
       name: '限时',
-      component: dynamicWrapper(app, [], () => import('../routes/Live/Base')),
+      component: dynamicWrapper(app, ['time'], () => import('../routes/TimeLimit/TimeLimit')),
+    },
+    '/time/search': {
+      name: '限时',
+      component: dynamicWrapper(app, ['time'], () => import('../routes/TimeLimit/Search')),
     },
     '/time/list2': {
       name: '限时',
@@ -96,7 +105,7 @@ export const getRouterData = app => {
     },
     '/my/main': {
       name: '我的',
-      component: dynamicWrapper(app, [], () => import('../routes/Live/Base')),
+      component: dynamicWrapper(app, ['my'], () => import('../routes/My/index')),
     },
     '/user': {
       component: dynamicWrapper(app, [], () => import('../layouts/UserLayout')),
@@ -110,14 +119,59 @@ export const getRouterData = app => {
     '/user/register-result': {
       component: dynamicWrapper(app, [], () => import('../routes/User/RegisterResult')),
     },
-    // '/user/:id': {
-    //   component: dynamicWrapper(app, [], () => import('../routes/User/SomeComponent')),
-    // },
+
+    '/shop/:id': {
+      component: dynamicWrapper(app, ['shop'], () => import('../routes/Shop/index')),
+    },
+    '/goodsParticulars/:id':{
+      component: dynamicWrapper(app, ['goodsParticulars'], () => import('../routes/GoodsParticulars/index')),
+    },
+    '/specialManage':{
+      component: dynamicWrapper(app, [], () => import('../routes/My/Sell/specialManage')),
+    },
+    '/Personalsettings':{
+      component: dynamicWrapper(app, ['personal'], () => import('../routes/My/Personal/PersonalSettings')),
+    },
+    '/PersonalInfor':{
+      component: dynamicWrapper(app, ['personal'], () => import('../routes/My/Personal/PersonalInfor')),
+    },
+    '/newAddress':{
+      component: dynamicWrapper(app, ['personal'], () => import('../routes/My/Personal/newAddress')),
+    },
+    '/myFocus':{
+      component: dynamicWrapper(app, ['myFocus'], () => import('../routes/My/Buy/MyFocus/index')),
+    },
+    '/myContactUs':{
+      component: dynamicWrapper(app, [], () => import('../routes/My/Buy/MyContactUs/index')),
+    },
+    '/myCashDeposit':{
+      component: dynamicWrapper(app, ['myCashDeposit'], () => import('../routes/My/Buy/MyCashDeposit/index')),
+    },
+    '/payCashDeposit':{
+      component: dynamicWrapper(app, [], () => import('../routes/My/Buy/MyCashDeposit/PayCashDeposit')),
+    },
+    '/myOrder':{
+      component: dynamicWrapper(app, ['order'], () => import('../routes/My/Buy/MyOrder/index')),
+    },
+    '/shop': {
+      component: dynamicWrapper(app, [], () => import('../layouts/ShopLayout')),
+    },
+
+    '/salesReturn':{
+      component: dynamicWrapper(app, ['sales'], () => import('../routes/My/Buy/MyOrder/SalesReturn')),
+    },
+
+
+
+
+
+    '/myAuction':{
+      component: dynamicWrapper(app, ['auction'], () => import('../routes/My/Buy/MyAuction/index')),
+    },
   };
   // Get name from ./menu.js or just set it in the router data.
   const menuData = getFlatMenuData(getMenuData());
-
-  // Route configuration data
+  // Route configuration data  /:storeName/:logoUr
   // eg. {name,authority ...routerConfig }
   const routerData = {};
   // The route matches the menu

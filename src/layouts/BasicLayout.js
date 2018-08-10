@@ -183,7 +183,6 @@ class BasicLayout extends React.PureComponent {
 
   isSelect = ({ path }) => {
     const { location } = this.props;
-
     if (location.pathname.indexOf(path) === 0) {
       return true;
     }
@@ -205,10 +204,12 @@ class BasicLayout extends React.PureComponent {
           tintColor="#33A3F4"
           barTintColor="white"
           hidden={hidden}
+          prerenderingSiblingsNumber={0}
         >
           {getBaseMenuData().map(menu => {
             return menu ? (
               <TabBar.Item
+
                 title={menu.name}
                 key={menu.path}
                 icon={
